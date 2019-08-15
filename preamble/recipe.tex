@@ -1,0 +1,19 @@
+% Define environments and commands for recipe
+
+\newenvironment{ingredients}[1]
+{
+\begin{tabular}{ R{1cm}@{\,}L{1cm} L{10cm}}
+  & & {\large {#1}}\vspace{0.1cm} \\
+}
+{
+\end{tabular}\par
+\vspace{0.3cm}
+}
+
+\newenvironment{recipestep}[1]
+{
+  {\large #1}\vspace{0.1cm}\par
+}
+{
+  \vspace{0.1cm}\par
+}
