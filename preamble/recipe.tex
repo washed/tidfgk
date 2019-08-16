@@ -3,17 +3,30 @@
 \newenvironment{ingredients}[1]
 {
 \begin{tabular}{ R{1cm}@{\,}L{1cm} L{10cm}}
-  & & {\large {#1}}\vspace{0.1cm} \\
+  & & {\subsection*{#1}}  \\
 }
 {
-\end{tabular}\par
-\vspace{0.3cm}
+\end{tabular}
 }
 
 \newenvironment{recipestep}[1]
 {
-  {\large #1}\vspace{0.1cm}\par
+  \subsection*{#1}
 }
 {
-  \vspace{0.1cm}\par
+}
+
+\NewDocumentEnvironment{recipeintro}{mmo}
+{
+  \begin{tabular}[t]{@{}p{11cm}p{3cm}@{}}
+}
+{
+  &
+   \begin{tabular}[t]{@{}R{1cm}@{ }L{3cm}@{}}
+   #1  &  Portionen  \\
+   #2  &  Stunde  \\
+   \end{tabular} \\
+   \\
+   \IfNoValueTF{#3}{}{Quelle: #3 \\}
+\end{tabular}\par
 }
