@@ -2,8 +2,9 @@
 
 \newenvironment{ingredients}[1]
 {
-\begin{tabular}{ R{1cm}@{\,}L{1cm} L{10cm}}
-  & & {\subsection*{#1}}  \\
+  \vspace{0.3cm}
+  \begin{tabular}{ R{1cm}@{\,}L{1cm} L{10cm}}
+  & & \textbf{\large Scharfe Sauce}\vspace{0.2cm}  \\
 }
 {
 \end{tabular}
@@ -29,4 +30,5 @@
    \\
    \IfNoValueTF{#3}{}{Quelle: #3 \\}
 \end{tabular}\par
+\vspace{0.4cm}
 }
