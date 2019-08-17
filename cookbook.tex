@@ -12,12 +12,20 @@
 
 \input{chapters/titlepage.tex}
 
-\cleardoublepage
+\cleardoublepage{}
 
 \tableofcontents
+\clearpage
+% The following avoids the automatic clear page after the TOC (from book class)
+\let\cleardoublepage=\clearpage
 
+% Begin arabic page numbering
 \pagenumbering{arabic}
 
+% Kapitel: Deutschland
+\input{chapters/deutschland.tex}
+
+% Kapitel: China
 \input{chapters/china.tex}
 
 \printindex
