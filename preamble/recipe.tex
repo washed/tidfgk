@@ -17,15 +17,15 @@
 {
 }
 
-\NewDocumentEnvironment{recipeintro}{mmo}
+\NewDocumentEnvironment{recipeintro}{ooo}
 {
   \begin{tabular}[t]{@{}p{11cm}@{}p{3cm}@{}}
 }
 {
   &
    \begin{tabular}[t]{@{}R{1cm}@{ }L{1.8cm}@{}}
-   #1  &  Portionen  \\
-   #2  &  Stunde  \\
+    \IfNoValueTF{#1}{}{#1 \\}
+    \IfNoValueTF{#2}{}{#2 \\}
    \end{tabular} \\
    \\
    \IfNoValueTF{#3}{}{Quelle: #3 \\}
