@@ -3,10 +3,11 @@
 \input{preamble/packages.tex}
 \input{preamble/preamble.tex}
 \input{preamble/recipe.tex}
+\input{preamble/index_def.tex}
 
-\makeindex[title=Index --- Kategorie]
-\makeindex[name=region,title=Index --- Region]
-\makeindex[name=ingredient,title=Index --- Zutat]
+\makeindex[title=Index --- Kategorie, intoc, options=-s \jobname]
+\makeindex[name=region,title=Index --- Region, intoc, options=-s \jobname]
+\makeindex[name=ingredient,title=Index --- Zutat, intoc, options=-s \jobname]
 
 \begin{document}
 
@@ -40,8 +41,6 @@
 \input{chapters/sonstiges.tex}
 
 % Kapitel: Index
-\printindex
-\printindex[region]
-\printindex[ingredient]
+\printindices%
 
 \end{document}

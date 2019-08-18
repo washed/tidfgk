@@ -1,0 +1,12 @@
+\begin{filecontents*}{\jobname.ist}
+  headings_flag 1
+  heading_prefix "{\\textbf{"
+  heading_suffix "}}\\nopagebreak\n"
+\end{filecontents*}
+
+\newcommand{\printindices}
+{
+  \printindex
+  \printindex[region]
+  \printindex[ingredient]
+}
