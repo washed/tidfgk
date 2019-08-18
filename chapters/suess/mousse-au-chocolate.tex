@@ -1,52 +1,32 @@
-% Überschrift/Name des Rezepts
-\section{Mousse au Chocolate}\label{rcp:mousse-au-chocolate}
-% Der Text im 'label'-Feld erlaubt es im Dokument auf dieses Rezept zu verweisen.
-% Sehr praktisch, wenn z.B. ein anderes Rezept dieses hier verwendet. Dabei werden Seitenzahl etc. automatisch
-% angepasst.
+\section{Mousse au Chocolate}\label{rcp:mousse-au-chocolate}%
+\index{Nachspeise}\index[region]{Frankreich}\index[ingredient]{Schokolade}
 
-% Das Folgende ist ein Einführungstext mit etwas Zusatzinfos:
 \begin{recipeintro}
-  % Anzahl der Portionen (optional)
   []
-  % Zubereitsungsdauer (optional)
   []
-  % Optional: Quellenangabe
   []
-
-  % Einführungstext
-  Super geiles Rezept!
+  Ein klassiker aus der französischen Nachspeisenküche.
 \end{recipeintro}
 
-% Ein Zutatenblock mit Überschrift
-% Bei längeren/komplizierteren Rezepten bietet es sich an, mehrere solcher Blöcke zu verwenden
-% um die Zutanten semantisch nach Rezeptmodule aufzuteilen.
 \begin{ingredients}
-  % Überschrift
   {Zutaten}
-  % Zutanten sind in einer Tabelle aufgelistet. Die Spalten werden durch ein '&' Zeichen getrennt,
-  % Eine Zeile wird mit '\\' abgeschlossen.
-
-  % <Menge>     &     <Einheit>          &  <Name>     \\
-  2                &  \si{\tl}           &  Szechuanpfeffer, ganz  \\
-
-  % Der Befehl '\si{<einheit>}' sollte wenn möglich für Einheiten verwendet werden.
-  % Wenn Einheiten fehlen, kann ich sie hinzufügen. FÜr mehr Infos: Dokumentation Paket siunitx.
-  % Beispiele:
-
-  % Teelöffel:   \si{\tl}
-  % Esslöffel:   \si{\el}
-  % Milliliter:  \si{\milli\litre}
-  % Kilogram:    \si{\kilo\gram}
+  3    &  Stk.        &  frische Eier  \\
+  200  &  \si{\gram}  &  Schlagsahne  \\
+  40   &  \si{\gram}  &  Zucker  \\
+  200  &  \si{\gram}  &  Zartbitterschokolade  \
 \end{ingredients}
 
-% Ein bissl Luft zwischen Rezeptliste und Anweisungen.
 \vspace{0.5cm}
 
-% Ein Zubereitungsschritt mit Überschrift
-% Diese Blöcke können beliebig oft nach einander erscheinen
 \begin{recipestep}
-  % Überschrift
   {Zubereitung}
-  % Der Text, der die Zubereitung beschreibt:
-  Bla bla bla\ldots
+  \begin{enumerate}
+    \item Eier trennen.
+    \item Eiweiß und Sahne getrennt steif schlagen.
+    \item Schokolade schmelzen und etwas abkühlen lassen. % TODO: Technik ref!
+    \item Eigebld mit \SI{2}{\el} heißem Wasser schlagen. Zucker einrieseln lassen.
+    \item Die noch flüssige Schokolade schnell einrühren.
+    \item Sofort Sahne und Eischnee unterrühren.
+    \item Die Mousse au Chocolate in einem Gefäß im Kühlschrank erkalten lassen, (\SIrange{2}{3}{\hour}).
+  \end{enumerate}
 \end{recipestep}
