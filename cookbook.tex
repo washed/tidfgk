@@ -4,7 +4,9 @@
 \input{preamble/preamble.tex}
 \input{preamble/recipe.tex}
 
-\makeindex
+\makeindex[title=Index --- Kategorie]
+\makeindex[name=region,title=Index --- Region]
+\makeindex[name=ingredient,title=Index --- Zutat]
 
 \begin{document}
 
@@ -22,12 +24,24 @@
 % Begin arabic page numbering
 \pagenumbering{arabic}
 
-% Kapitel: Deutschland
-\input{chapters/deutschland.tex}
+% Kapitel: Technik/Ausstattung
+\input{chapters/technik_ausstattung.tex}
 
-% Kapitel: China
-\input{chapters/china.tex}
+% Kapitel: Basisrezepte
+\input{chapters/basisrezepte.tex}
 
+% Kapitel: Herzhaft
+\input{chapters/herzhaft.tex}
+
+% Kapitel: Süß
+\input{chapters/suess.tex}
+
+% Kapitel: Sonstiges
+\input{chapters/sonstiges.tex}
+
+% Kapitel: Index
 \printindex
+\printindex[region]
+\printindex[ingredient]
 
 \end{document}

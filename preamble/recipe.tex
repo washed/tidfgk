@@ -17,18 +17,18 @@
 {
 }
 
-\NewDocumentEnvironment{recipeintro}{ooo}
+\NewDocumentEnvironment{recipeintro}{oooo}
 {
   \begin{tabular}[t]{@{}p{11cm}@{}p{3cm}@{}}
 }
 {
-  &
-   \begin{tabular}[t]{@{}R{1cm}@{ }L{1.8cm}@{}}
-    \IfNoValueTF{#1}{}{#1 \\}
-    \IfNoValueTF{#2}{}{#2 \\}
-   \end{tabular} \\
-   \\
-   \IfNoValueTF{#3}{}{Quelle: #3 \\}
+  &  \begin{tabular}[t]{@{}R{1cm}@{ }L{1.8cm}@{}}
+       \IfNoValueTF{#1}{}{#1 \\}
+       \IfNoValueTF{#2}{}{#2 \\}
+     \end{tabular} \\
+     \\
+  \IfNoValueTF{#4}{}{Schlagwörter: #4} \\
+  \IfNoValueTF{#3}{}{Quelle: #3 \\}
 \end{tabular}\par
 \vspace{0.4cm}
 }
