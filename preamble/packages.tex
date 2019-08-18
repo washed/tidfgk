@@ -13,12 +13,12 @@
 
 % This fixes lseries error with siunitx and light fonts
 \usepackage{xpatch}
-\ExplSyntaxOn
+\ExplSyntaxOn%
 \xpatchcmd{\__siunitx_detect_font_weight_text:}
-  { \lseries }
-  { \fontseries{l} \selectfont }
+  {\lseries}
+  {\fontseries{l} \selectfont}
   {}{}
-\ExplSyntaxOff
+\ExplSyntaxOff%
 
 \sisetup{
     range-units=single,
@@ -46,7 +46,7 @@
 
 \usepackage{titlesec}
 
-\ifpdf
+\ifpdf%
   \usepackage{pdfcolmk}
 \fi
 
