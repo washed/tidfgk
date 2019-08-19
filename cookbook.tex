@@ -13,16 +13,23 @@
 
 \pagenumbering{gobble}
 
+% Titelseite
 \input{chapters/titlepage.tex}
 
+% Mindestens eine leere linke Seite nach Titelseite
 \cleardoublepage{}
 
+% Inhaltsverzeichnis
 \tableofcontents
+
+% Neue Seite nach Inhaltsverzeichnis
 \clearpage
-% The following avoids the automatic clear page after the TOC (from book class)
+
+% Verhindert die doppelt leere Seite nach dem Inhaltsverzeichnis.
+% TODO: Evtl. doch drin lassen, damit das erste Kapitel auf einer rechten Seite startet.
 \let\cleardoublepage=\clearpage
 
-% Begin arabic page numbering
+% Seitenzahlen: arabisch
 \pagenumbering{arabic}
 
 % Kapitel: Technik/Ausstattung
