@@ -9,6 +9,9 @@
 \makeindex[name=region,title=Index --- Region, intoc, options=-s \jobname]
 \makeindex[name=ingredient,title=Index --- Zutat, intoc, options=-s \jobname]
 
+% Makes inserted clear pages really empty
+\usepackage{emptypage}
+
 \begin{document}
 
 \pagenumbering{gobble}
@@ -16,18 +19,11 @@
 % Titelseite
 \input{chapters/titlepage.tex}
 
-% Mindestens eine leere linke Seite nach Titelseite
-\cleardoublepage{}
-
 % Inhaltsverzeichnis
 \tableofcontents
 
-% Neue Seite nach Inhaltsverzeichnis
-\clearpage
-
-% Verhindert die doppelt leere Seite nach dem Inhaltsverzeichnis.
-% TODO: Evtl. doch drin lassen, damit das erste Kapitel auf einer rechten Seite startet.
-\let\cleardoublepage=\clearpage
+% Notwendig damit die Seitennummerierung korrekt beginnt
+\cleardoublepage{}
 
 % Seitenzahlen: arabisch
 \pagenumbering{arabic}
