@@ -2,23 +2,54 @@
 
 \input{preamble/packages.tex}
 \input{preamble/preamble.tex}
+\input{preamble/recipe.tex}
+\input{preamble/index_def.tex}
 
-\makeindex
+\makeindex[title=Index --- Kategorie, intoc, options=-s \jobname]
+\makeindex[name=region,title=Index --- Region, intoc, options=-s \jobname]
+\makeindex[name=ingredient,title=Index --- Zutat, intoc, options=-s \jobname]
+
+% Makes inserted clear pages really empty
+\usepackage{emptypage}
 
 \begin{document}
 
 \pagenumbering{gobble}
 
+% Titelseite
 \input{chapters/titlepage.tex}
 
-\cleardoublepage
-
+% Inhaltsverzeichnis
 \tableofcontents
 
+% Notwendig damit die Seitennummerierung korrekt beginnt
+\cleardoublepage{}
+
+% Seitenzahlen: arabisch
 \pagenumbering{arabic}
 
-\input{chapters/china.tex}
+% Kapitel: Vorwort
+\input{chapters/vorwort.tex}
 
-\printindex
+% Kapitel: Technik/Ausstattung
+\input{chapters/technik_ausstattung.tex}
+
+% Kapitel: Basisrezepte
+\input{chapters/basisrezepte.tex}
+
+% Kapitel: Herzhaftes
+\input{chapters/herzhaftes.tex}
+
+% Kapitel: Dips & Saucen
+\input{chapters/dips_saucen.tex}
+
+% Kapitel: Süßes
+\input{chapters/suesses.tex}
+
+% Kapitel: Sonstiges
+\input{chapters/sonstiges.tex}
+
+% Kapitel: Index
+\printindices%
 
 \end{document}

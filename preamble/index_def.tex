@@ -1,0 +1,19 @@
+\makeatletter
+\newcommand \indexdotfill {\leavevmode \cleaders \hb@xt@ .44em{\hss .\hss }\hfill \kern \z@}
+\makeatother
+
+\begin{filecontents*}{\jobname.ist}
+  headings_flag 1
+  heading_prefix "{\\textbf{"
+  heading_suffix "}}\\nopagebreak\n"
+  delim_0 " \\dotfill "
+  delim_1 " \\dotfill "
+  delim_2 " \\dotfill "
+\end{filecontents*}
+
+\newcommand{\printindices}
+{
+  \printindex
+  \printindex[region]
+  \printindex[ingredient]
+}

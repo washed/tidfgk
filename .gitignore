@@ -274,3 +274,6 @@ TSWLatexianTemp*
 
 # Ignore only pdf in root file (our output pdf)
 /*.pdf
+
+# Ignore ist files (we generate them from latex, if needed)
+*.ist

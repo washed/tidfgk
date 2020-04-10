@@ -1,0 +1,62 @@
+% Überschrift/Name des Rezepts
+\section{Brandmasse}\label{rcp:brandmasse}%
+\index{Teig}\index[region]{Deutschland}
+% Der Text im 'label'-Feld erlaubt es im Dokument auf dieses Rezept zu verweisen.
+% Sehr praktisch, wenn z.B. ein anderes Rezept dieses hier verwendet. Dabei werden Seitenzahl etc. automatisch
+% angepasst.
+
+% Das Folgende ist ein Einführungstext mit etwas Zusatzinfos:
+\begin{recipeintro}
+  % Anzahl der Portionen (optional)
+  []
+  % Zubereitsungsdauer (optional)
+  []
+  % Optional: Quellenangabe
+  [Martin Schönleben]
+  % Einführungstext
+  Dieses Grundrezept für eine Brandmasse (Brandteig) kann als Basis für
+  verschiedenste Sachen dienen, z.B. Käse-Fours, Windbeutel oder Profiterol.
+\end{recipeintro}
+
+% Ein Zutatenblock mit Überschrift
+% Bei längeren/komplizierteren Rezepten bietet es sich an, mehrere solcher Blöcke zu verwenden
+% um die Zutanten semantisch nach Rezeptmodule aufzuteilen.
+\begin{ingredients}
+  % Überschrift
+  {Zutaten}
+  % Zutanten sind in einer Tabelle aufgelistet. Die Spalten werden durch ein '&' Zeichen getrennt,
+  % Eine Zeile wird mit '\\' abgeschlossen.
+
+  % <Menge>     &     <Einheit>          &  <Name>     \\
+  350  &  \si{\milli\litre}  &  Milch  \\
+  50   &  \si{\gram}         &  Butter  \\
+  250  &  \si{\gram}         &  Mehl  \\
+       &                     &  geriebene Zitrone  \\
+  250  &  \si{\milli\litre}  &  Vollei  \\
+
+  % Der Befehl '\si{<einheit>}' sollte wenn möglich für Einheiten verwendet werden.
+  % Wenn Einheiten fehlen, kann ich sie hinzufügen. FÜr mehr Infos: Dokumentation Paket siunitx.
+  % Beispiele:
+
+  % Teelöffel:   \si{\tl}
+  % Esslöffel:   \si{\el}
+  % Milliliter:  \si{\milli\litre}
+  % Kilogram:    \si{\kilo\gram}
+\end{ingredients}
+
+% Ein bissl Luft zwischen Rezeptliste und Anweisungen.
+\vspace{0.5cm}
+
+% Ein Zubereitungsschritt mit Überschrift
+% Diese Blöcke können beliebig oft nach einander erscheinen
+\begin{recipestep}
+  % Überschrift
+  {Zubereitung}
+  % Der Text, der die Zubereitung beschreibt:
+  Butter und Milch kochen. Dann das Mehl kurz unterrühren. So lange rühren, bis sich
+  die Masse ballt und einen kompakten Kloß bildet, dann vom Herd nehmen. Anschließend
+  die Eier nach und nach unterrühren. Mit einer Lochtülle kleine Tupfen aufdressieren.
+
+  Backen: \SI{190}{\degree\celsius} ca. \SIrange{15}{20}{\minute}.\\
+  Beim Backen Dampf geben.
+\end{recipestep}

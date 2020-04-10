@@ -33,3 +33,43 @@
 \makeatother
 
 \setlength{\parindent}{0pt}
+
+\def\arraystretch{1}%\tabcolsep=14pt
+
+% fixed width column types with alignment
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% some colors
+\definecolor{gray75}{gray}{0.75}
+
+% chapter header style
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+\renewcommand{\footnoterule}{%
+  \kern-3pt
+  \hrule width \textwidth height 0.4pt
+  \kern2.6pt
+}
+
+\titlespacing*{\chapter}
+{0pt}{4ex plus 1ex minus 0.5ex}{4ex plus 0.5ex}
+\titlespacing*{\section}
+{0pt}{4ex}{3ex}
+\titlespacing*{\subsection}
+{0pt}{2ex}{1ex}
+
+% Some spacing between paragraphs
+\setlength{\parskip}{1em}
+
+\ExplSyntaxOn
+\DeclareExpandableDocumentCommand{\IfNoValueOrEmptyTF}{mmm}
+ {
+  \IfNoValueTF{#1}{#2}
+   {
+    \tl_if_empty:nTF {#1} {#2} {#3}
+   }
+ }
+\ExplSyntaxOff

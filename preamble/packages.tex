@@ -1,36 +1,28 @@
 \usepackage[a4paper,left=3cm,right=3cm,top=3cm,bottom=3cm,bindingoffset=10mm]{geometry}
 \usepackage{nicefrac}
-\usepackage[nonumber,index]{cuisine}
-
-% \RecipeWidths{Total recipe width} {Number of servings width} {Stepnumber width} {Ingredient width} {Quantity width} {Units width}
-\RecipeWidths{16cm}{6cm}{0.5cm}{3.5cm}{1cm}{1.5cm}
-\def\arraystretch{1.05}%\tabcolsep=14pt
-
-% \usepackage[T1]{fontenc}
-% \usepackage{lmodern}
-
-% \usepackage[sfdefault,ultralight]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
-% \usepackage[T1]{fontenc}
-% \renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
-
-% \usepackage[sfdefault,thin]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
-% \usepackage[T1]{fontenc}
 
 \usepackage[sfdefault,light]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+\usepackage{roboto-mono}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{sanitize-umlaut}
 
 \usepackage{url}
 \usepackage[svgnames]{xcolor}
 \usepackage{siunitx}
+\usepackage{xparse}
 
-% This should fix lseries error with siunitx
+\usepackage{multirow}
+
+% This fixes lseries error with siunitx and light fonts
 \usepackage{xpatch}
-\ExplSyntaxOn
+\ExplSyntaxOn%
 \xpatchcmd{\__siunitx_detect_font_weight_text:}
-  { \lseries }
-  { \fontseries{l} \selectfont }
+  {\lseries}
+  {\fontseries{l} \selectfont}
   {}{}
-\ExplSyntaxOff
+\ExplSyntaxOff%
 
 \sisetup{
     range-units=single,
@@ -42,40 +34,34 @@
 \DeclareSIUnit\tl{TL}
 \DeclareSIUnit\el{EL}
 
-\usepackage{makeidx}
+\usepackage{filecontents}
+\usepackage{imakeidx}
 \usepackage{hyperref}
-\usepackage[german]{babel}
+\urlstyle{same}
 
 \usepackage{titlesec}
 \usepackage{blindtext}
+\usepackage{lipsum}
 \usepackage{color}
-\definecolor{gray75}{gray}{0.75}
-\newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\usepackage{xparse}
 
 \usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
 \usepackage{tabularx}
 \usepackage{booktabs}
 
-\ifpdf
+\usepackage{titlesec}
+
+\ifpdf%
   \usepackage{pdfcolmk}
 \fi
 
-%% check if using xelatex rather than pdflatex
-\ifxetex
-  \usepackage{fontspec}
-\fi
-
 \usepackage{graphicx}
-
-%%\usepackage{hyperref}
 
 %% drawing package
 \usepackage{tikz}
 %% for dingbats
 \usepackage{pifont}\providecommand{\HUGE}{\Huge} % if not using memoir
 \newlength{\drop} % for my convenience
+
+% Enable this package for visual debugging of boxes. Compile with LuaLaTeX.
+%\usepackage{lua-visual-debug}
