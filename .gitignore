@@ -277,3 +277,5 @@ TSWLatexianTemp*
 
 # Ignore ist files (we generate them from latex, if needed)
 *.ist
+
+.SRCINFO
