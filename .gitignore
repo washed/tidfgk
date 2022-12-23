@@ -279,3 +279,5 @@ TSWLatexianTemp*
 *.ist
 
 .SRCINFO
+
+*.pdf
