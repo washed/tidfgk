@@ -1,5 +1,8 @@
 .PHONY: watch pdf clean-temp clean enable-roboto
 
+build:
+	docker-compose up --build --remove-orphans
+
 watch:
 	latexmk -pvc
 
